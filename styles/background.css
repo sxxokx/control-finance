@@ -1,0 +1,19 @@
+.bg-modal{
+    background-color: rgba(0,0,0, 0.441);
+    width: 100vw;
+    height: 100rem;
+    position: absolute;
+    padding: 1.5rem;
+    left: 0;
+    top: 0;
+}
+
+.tela-modal{
+    background-color: var(--fixed-white);
+    color: var(--color-grey-2);
+    position: absolute;
+    border-radius: var(--radius-1);
+    height: 30rem;
+    width: 90vw;
+    padding: 1rem;
+}

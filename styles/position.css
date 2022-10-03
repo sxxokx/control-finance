@@ -1,0 +1,30 @@
+.colum{
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.gap{
+    gap:1rem;
+}
+.gapNav{
+    gap: 0.5rem;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.start{
+    justify-content: flex-start;
+}
+.between{
+    justify-content: space-between;
+}
+.itens-center{
+    align-items: center;
+}
+.marg-top{
+    margin-top: 2rem;
+}
+.marg-bottom{
+    margin-bottom: 2rem;
+}

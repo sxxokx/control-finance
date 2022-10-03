@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Finance</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Control Finance - Seu controle financeiro">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../../styles/color.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/background.css">
+    <link rel="stylesheet" href="../../styles/position.css">
+    
+</head>
+<body id="main-container">
+    <header class="flex start colum gap wrap">
+        <div class="flex wrap gapNav"><h2 class="title-color">Control</h2><h2 class="title-color-2">Finance</h2></div>
+        <div><button id="registerNew" class="register">Registrar novo valor</button></div>
+    </header>
+
+    <main id="app">
+        <div class="flex colum gap wrap">
+            <h3>Resumo Financeiro</h3>
+            <nav class=" flex gap wrap">
+                <button class="buttonNave">Todos</button>
+                <button class="buttonNave">Entradas</button>
+                <button class="buttonNave">Saídas</button>
+            </nav>
+        </div>
+        <div class="somaValor flex itens-center between marg-top">
+            <h4>Soma dos Valores</h4>
+            <p>R$ 1200</p>
+        </div>
+        <section>
+            <ul class="flex colum gap">
+                <li class="itens-Tela flex itens-center between marg-top">
+                    <h4>R$ 100</h4>
+                    <div class="flex gap">
+                        <button class="button-caixa">Entradas</button> 
+                        <button class="b-none"><img src="../../assets/trash.png" alt=""></button>                 
+                    </div>
+                </li>
+                <li class="itens-Tela flex itens-center between marg-top">
+                    <h4>R$ 100</h4>
+                    <div class="flex gap">
+                        <button class="button-caixa">Entradas</button> 
+                        <button class="b-none"><img src="../../assets/trash.png" alt=""></button>                 
+                    </div>
+                </li>
+                <li class="itens-Tela flex itens-center between marg-top">
+                    <h4>R$ 100</h4>
+                    <div class="flex gap">
+                        <button class="button-caixa">Entradas</button> 
+                        <button class="b-none"><img src="../../assets/trash.png" alt=""></button>                 
+                    </div>
+                </li>
+                <li class="itens-Tela flex itens-center between marg-top">
+                    <h4>R$ 100</h4>
+                    <div class="flex gap">
+                        <button class="button-caixa">Entradas</button> 
+                        <button class="b-none"><img src="../../assets/trash.png" alt=""></button>                 
+                    </div>
+                </li>
+                <li class="itens-Tela flex itens-center between marg-top">
+                    <h4>R$ 100</h4>
+                    <div class="flex gap">
+                        <button class="button-caixa">Entradas</button> 
+                        <button class="b-none"><img src="../../assets/trash.png" alt=""></button>                 
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!--<section class="modal marg-top">
+            <div class="flex itens-center between">
+                <h4>Registro de valor</h4>
+                <button class="b-close-modal">X</button>
+            </div>
+            <p  class="flex wrap marg-top color-infM">Digite um valor e em seguida aperte no botão referente ao tipo do valor</p>
+            <div class="flex wrap gap colum marg-top">
+                <h4>Valor</h4>
+                <input class="modal-input" placeholder="00,00" type="number">
+            </div>
+            <div class="marg-top flex colum gap">
+                <h4>tipo de valor</h4>
+                <button class="b-type-valor">Entrada</button>
+                <button class="b-type-valor">Saída</button>
+            </div>
+            <div class="marg-top flex itens-center between ">
+                <button class="b-modal-cancel">Cancelar</button>
+                <button class="b-modal-inserir">Inserir Valor</button>
+            </div>
+        </section>-->
+    </main>
+    <script src="/scripts/modal.js"></script>
+    <script src="valuesData.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
