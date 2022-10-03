@@ -27,7 +27,7 @@
 }
 .b-none{
     border: none;
-    background-color: var(--fixed-white);
+   background-color: transparent;
 }
 
 .b-type-valor{

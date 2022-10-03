@@ -83,6 +83,7 @@ function showModalInserir(){
 
     btInserir.classList = 'b-modal-inserir'
     btInserir.innerText = 'Inserir valor'
+    btInserir.id = 'inserir-item'
 
     headModal.append(h4Head, btHead) 
     mainModal.append(h4Main, inputMain)
@@ -106,6 +107,7 @@ function showModalNew(){
         mainContaier.appendChild(showMore)
 
         closeModalNew()
+        showItens()
     })
 }
 
