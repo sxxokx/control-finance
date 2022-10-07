@@ -16,23 +16,23 @@
     
 </head>
 <body id="main-container">
-    <header class="flex start colum gap wrap">
+    <header class="headMidia flex start colum gap wrap">
         <div class="flex wrap gapNav"><h2 class="title-color">Control</h2><h2 class="title-color-2">Finance</h2></div>
         <div><button id="registerNew" class="register">Registrar novo valor</button></div>
     </header>
 
     <main id="app">
-        <div class="flex colum gap wrap">
+        <section class="container">
+        <div id="resum-buttons" class="flex colum gap wrap">
             <h3>Resumo Financeiro</h3>
             <nav class=" flex gap wrap">
-                <button class="buttonNave">Todos</button>
-                <button class="buttonNave">Entradas</button>
-                <button class="buttonNave">Saídas</button>
+                <button id="tela-todos" class="buttonNave">Todos</button>
+                <button id="tela-entrada" class="buttonNave">Entradas</button>
+                <button id="tela-saida" class="buttonNave">Saídas</button>
             </nav>
         </div>
-        <div class="somaValor flex itens-center between marg-top">
-            <h4>Soma dos Valores</h4>
-            <p>R$ 1200</p>
+        <div id="priceTotal" class="somaValor flex itens-center between marg-top">
+     
         </div>
         <section>
             <ul id="itens-tela" class="flex colum gap">
@@ -93,6 +93,7 @@
                 <button class="b-modal-inserir">Inserir Valor</button>
             </div>
         </section>-->
+    </section>
     </main>
     <script src="./scripts/modal.js"></script>
     <script src="valuesData.js"></script>

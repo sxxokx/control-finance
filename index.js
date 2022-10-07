@@ -26,7 +26,7 @@ function createTabela(arr){
         divItens.classList = 'flex gap'
     
         bttItens.classList.add('button-caixa')
-        if(element.categoryID === 1){
+        if(element.categoryID[0] === 'Entradas'){
             bttItens.innerText = 'Entrada'           
         }else{
             bttItens.innerText = 'Saída'
@@ -64,7 +64,7 @@ function showItens(){
 
 function closeItens(){
     const bttCloseItens = document.querySelectorAll('.b-none')
-
+        
     bttCloseItens.forEach((element) => {
 
         element.addEventListener('click', (event) => {
@@ -75,3 +75,78 @@ function closeItens(){
     })
 }
 closeItens()
+
+
+
+function eventFilter(){
+    const filterButtons = document.querySelectorAll('.buttonNave')
+    const mainList = document.getElementById('itens-tela')
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            mainList.innerHTML = ''
+
+            const filter = button.innerText
+            
+            if(filter === 'Todos'){
+                createTabela(insertedValues)
+            }
+
+            const filterItens = itensFilter(filter)
+
+            createTabela(filterItens)
+            closeItens()
+        })
+    })
+}
+
+function itensFilter(text) {
+    const itensFiltrados = insertedValues.filter(itens => itens.categoryID.includes(text))
+
+    return itensFiltrados
+}
+
+eventFilter()
+
+
+function somaPrice (lista){
+    //
+       let contador = 0
+    for(let i = 0; i < lista.length; i++){
+        let total = lista[i].value
+        contador += total
+    }
+        return contador
+    
+    
+}
+somaPrice(insertedValues)
+console.log(somaPrice(insertedValues))
+
+
+/*<h4>Soma dos Valores</h4>
+<p id="priceTotal">R$ 1200</p>*/
+
+function renderTotal (){
+    const divValue = document.getElementById('priceTotal')
+    const h4Value = document.createElement('h4')
+    const pValue = document.createElement('p')
+
+    h4Value.innerText = 'Soma dos valores'
+
+    pValue.innerText = `R$ ${somaPrice(insertedValues)}`
+
+    divValue.append(h4Value, pValue)
+    
+
+    return divValue
+
+}
+renderTotal()
+
+/** 
+ Faltado--
+ 1-Fidelidade do figma
+ 3- registrar novo valor
+ 4- remover dados do array
+ */

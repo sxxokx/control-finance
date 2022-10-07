@@ -16,3 +16,31 @@
     padding: 1rem;
     border: solid 1px var(--color-grey-5);
 }
+
+@media(min-width:700px){
+    .container{
+        width: 900px;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .start{
+        justify-content: space-between;
+    }
+    .colum{
+        flex-direction: row;
+    }
+    .headMidia{
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    .register{
+        width: 20%;
+    }
+
+    #resum-buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+}

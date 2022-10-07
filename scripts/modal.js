@@ -42,7 +42,7 @@ function showModalInserir(){
     const btInserir = document.createElement('button')
 
 
-    bgModal.classList.add('bg-modal')
+    bgModal.classList = 'bg-modal flex just-center'
     bgModal.id = 'back-modal'
 
     telaModal.classList = 'tela-modal modal marg-top wrap'
