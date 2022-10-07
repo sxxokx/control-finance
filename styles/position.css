@@ -39,4 +39,9 @@
     .start{
         justify-content: space-between;
     }
+
+    #itens-tela{
+        display: flex;
+        flex-direction: column;
+    }
 }
