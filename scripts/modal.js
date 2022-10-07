@@ -66,15 +66,15 @@ function showModalInserir(){
     inputMain.type = 'Number'
     inputMain.placeholder = 'R$ 00,00'
 
-    modalInfo.classList = 'marg-top flex colum gap'
+    modalInfo.classList = 'marg-top flex colum gap modalInfo'
 
     h4Info.innerText = 'Tipo de valor'
 
     btEntrada.classList = 'b-type-valor'
-    btEntrada.innerText = 'Entrada'
+    btEntrada.innerText = 'Entradas'
 
     btSaida.classList = 'b-type-valor'
-    btSaida.innerText = 'Saída'
+    btSaida.innerText = 'Saídas'
 
     footModal.classList = 'marg-top flex itens-center between'
 
@@ -93,6 +93,10 @@ function showModalInserir(){
     bgModal.appendChild(telaModal)
 
     return bgModal
+}
+
+function inserirValor(){
+    const botValor = document.getElementById('inserir-item')
 }
 
 
@@ -121,3 +125,5 @@ function closeModalNew(){
     })
 }
 showModalNew()
+
+

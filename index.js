@@ -21,12 +21,12 @@ function createTabela(arr){
         liItens.classList = "itens-Tela flex itens-center between marg-top"
         //liItens.id = 'li-itens'
     
-        h4Itens.innerText = `R$ ${element.value}`
+        h4Itens.innerText = `R$ ${Math.abs(element.value)}`
     
         divItens.classList = 'flex gap'
     
         bttItens.classList.add('button-caixa')
-        if(element.categoryID[0] === 'Entradas'){
+        if(element.categoryID === 'Entradas'){
             bttItens.innerText = 'Entrada'           
         }else{
             bttItens.innerText = 'Saída'
@@ -39,10 +39,12 @@ function createTabela(arr){
         divItens.append(bttItens, bttTrash)
         liItens.append(h4Itens, divItens)
         ulTela.appendChild(liItens)
-    
+        
     });
     
-        
+    
+    renderTotal()
+    
 }
 
 createTabela(insertedValues)
@@ -51,15 +53,40 @@ createTabela(insertedValues)
 function showItens(){
     const newItens = document.getElementById('inserir-item')
     const ulTela = document.getElementById('itens-tela')
-    
-    newItens.addEventListener('click', (event) =>{
-        console.log("clicou")
-        event.preventDefault()
-        ulTela.innerHTML = ""
-         createTabela(insertedValues)
-       
+    const modInfo = document.querySelector('.modalInfo')
+    const inputM = document.querySelector('.modal-input')
+    const modModal = document.getElementById('back-modal')
+    modInfo.addEventListener('click', (event) =>{
         
+        if(event.target.tagName == "BUTTON"){
+            let categoryID = event.target.innerText
+            console.log(categoryID)
+
+            let tipoValor = +inputM.value
+            if(categoryID == "Saídas"){
+                tipoValor = -tipoValor
+            }
+
+            newItens.addEventListener('click', (event) =>{
+                event.preventDefault()
+                id++
+               
+                const objetoTela = {
+                    id: id,
+                    value: tipoValor,
+                    categoryID: categoryID,
+                }
+                insertedValues.push(objetoTela)
+
+                console.log(objetoTela)
+                ulTela.innerHTML = ""
+                 createTabela(insertedValues)
+               modModal.remove()
+                
+            })
+        }
     })
+    
 }
 
 function closeItens(){
@@ -90,18 +117,21 @@ function eventFilter(){
             
             if(filter === 'Todos'){
                 createTabela(insertedValues)
+            }else{
+                const itensFiltrados = insertedValues.filter(itens => itens.categoryID == filter)
+                
+
+                createTabela(itensFiltrados)
+                console.log(itensFiltrados)
             }
 
-            const filterItens = itensFilter(filter)
-
-            createTabela(filterItens)
             closeItens()
         })
     })
 }
 
 function itensFilter(text) {
-    const itensFiltrados = insertedValues.filter(itens => itens.categoryID.includes(text))
+    const itensFiltrados = insertedValues.filter(itens => itens.categoryID == text)
 
     return itensFiltrados
 }
@@ -109,44 +139,29 @@ function itensFilter(text) {
 eventFilter()
 
 
-function somaPrice (lista){
-    //
-       let contador = 0
-    for(let i = 0; i < lista.length; i++){
-        let total = lista[i].value
-        contador += total
-    }
-        return contador
+
+function renderTotal (){
+   const total = document.getElementById('valor-total')
+
+   let soma =  insertedValues.reduce((acumulador, atual)=> acumulador + atual.value, 0)
     
+    total.innerText = `R$ ${soma}`
+
     
+
 }
-somaPrice(insertedValues)
-console.log(somaPrice(insertedValues))
+
+
 
 
 /*<h4>Soma dos Valores</h4>
 <p id="priceTotal">R$ 1200</p>*/
 
-function renderTotal (){
-    const divValue = document.getElementById('priceTotal')
-    const h4Value = document.createElement('h4')
-    const pValue = document.createElement('p')
 
-    h4Value.innerText = 'Soma dos valores'
 
-    pValue.innerText = `R$ ${somaPrice(insertedValues)}`
-
-    divValue.append(h4Value, pValue)
-    
-
-    return divValue
-
-}
-renderTotal()
 
 /** 
  Faltado--
- 1-Fidelidade do figma
  3- registrar novo valor
  4- remover dados do array
  */
